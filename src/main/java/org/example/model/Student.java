@@ -1,14 +1,15 @@
 package org.example.model;
 
+import java.time.LocalDate;
 import java.util.Objects;
 
 public class Student {
     private String studentId;
     private String name;
-    private String birthDate;
+    private LocalDate birthDate;
     private String email;
 
-    public Student(String studentId, String name, String birthDate, String email) {
+    public Student(String studentId, String name, LocalDate birthDate, String email) {
         this.studentId = studentId;
         this.name = name;
         this.birthDate = birthDate;
@@ -30,11 +31,11 @@ public class Student {
         this.name = name;
     }
 
-    public String getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
