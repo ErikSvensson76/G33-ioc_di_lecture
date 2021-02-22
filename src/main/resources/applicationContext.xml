@@ -9,6 +9,14 @@
     http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- Define your beans here -->
+    <bean id="studentDAOListImpl" class="org.example.data.StudentDAOListImpl"/>
+    <bean id="courseDAOListImpl" class="org.example.data.CourseDAOListImpl"/>
+    <bean id="studentDTOConverterImpl" class="org.example.service.StudentDTOConverterImpl" />
+
+    <bean id="studentServiceImpl" class="org.example.service.StudentServiceImpl">
+        <property name="studentDAO" ref="studentDAOListImpl" />
+        <property name="converter" ref="studentDTOConverterImpl" />
+    </bean>
 
 
 </beans>
