@@ -3,6 +3,8 @@ package org.example.service;
 import org.example.data.StudentDAO;
 import org.example.dto.StudentDTO;
 import org.example.model.Student;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -10,10 +12,23 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class StudentServiceImpl implements StudentService{
 
     private StudentDAO studentDAO;
     private StudentDTOConverter converter;
+
+    @Autowired
+    public void setStudentDAO(StudentDAO studentDAO) {
+        System.out.println("Calling setStudentDAO()");
+        this.studentDAO = studentDAO;
+    }
+
+    @Autowired
+    public void setConverter(StudentDTOConverter converter) {
+        System.out.println("Calling setConverter()");
+        this.converter = converter;
+    }
 
     @Override
     public StudentDTO create(String firstName, String lastName, LocalDate birthDate, String email) {
