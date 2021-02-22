@@ -2,10 +2,12 @@ package org.example.service;
 
 import org.example.dto.CourseDTO;
 import org.example.dto.StudentDTO;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.util.List;
 
+@Component
 public class CourseServiceImpl implements CourseService{
     @Override
     public CourseDTO create(String courseName, LocalDate start, LocalDate end) {
